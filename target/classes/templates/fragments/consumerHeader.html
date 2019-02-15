@@ -1,0 +1,14 @@
+<nav class="navbar"
+	th:fragment="ConsumerHeader">
+	<div class="container text-left">
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+					<a th:href="@{/consumers}"> <span
+							class="" aria-hidden="true"></span>User List
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>

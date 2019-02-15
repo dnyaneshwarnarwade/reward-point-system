@@ -1,0 +1,38 @@
+<!-- Form used to add new entries of employee in database -->
+<form class="form-horizontal alert alert-warning" name="empList" id="empForm" ng-submit="insertInfo(empInfo);" hidden>
+<h3 class="text-center">Insert Employee Details Into Database</h3>
+
+<div class="form-group">
+<label for="Name">Category:</label>
+<input type="text" name="emp_name" class="form-control" placeholder="Enter Employee Name" ng-model="catInfo.parent" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="empList.emp_name.$invalid && empList.emp_name.$dirty">Name field is Empty!</p>
+</div>
+
+
+<div class="form-group">
+<label for="Name">Sub Category:</label>
+<input type="text" name="subCategory" class="form-control" placeholder="Enter Sub Category" ng-model="catInfo.name" autofocus required />
+</div>
+<div class="form-group">
+<p class="text-danger" ng-show="empList.emp_name.$invalid && empList.emp_name.$dirty">Name field is Empty!</p>
+</div>
+
+<div class="form-group">
+<button class="btn btn-warning" ng-disabled="empList.$invalid">Add Into Database</button>
+</div>
+</form>
+
+<script>
+scope.insertInfo = function(info){
+	$http.post('databaseFiles/insertDetails.php',{"name":info.name,"email":info.email,"address":info.address,"gender":info.gender}).success(function(data){
+	if (data == true) {
+	getInfo();
+	// Hide details insertion form
+	$('#empForm').css('display', 'none');
+	}
+	});
+	}
+
+</script>

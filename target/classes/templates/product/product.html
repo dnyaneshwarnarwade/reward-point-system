@@ -1,0 +1,102 @@
+<form onsubmit="saveProductDetails()">
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row add-product-form">
+						<div class="col-md-4">
+							<div><label>Product Category <span><a href="#addCategory">Add Category</a></span></label></div>
+							<select class="form-control">
+								<option>less than 500</option>
+								<option>less than 500</option>
+								<option>less than 500</option>
+							</select>
+						</div>
+						<div class="col-md-8">
+							<label>Product Name</label>
+							<input type="text" class="form-control form-control" placeholder="Enter Product Name" name="name">
+						</div>
+					</div>
+					<div class="row add-product-form">
+						<div class="col-md-3">
+							<div><label>( SKU )</label>&nbsp;<span><a href="#">What is SKU ?</a></span></div>
+							<input type="text" id="sku" ng-model="sku" placeholder="SKU">
+						</div>
+						<div class="col-md-3">
+							<div><label>Price</label></div>
+							<input type="number" id="price" ng-model="price" placeholder="Price">
+						</div>
+						<div class="col-md-6">
+							<div><label>Product Description</label></div>
+							<textarea rows="3" cols="50" id="desc" ng-model="desc" placeholder="Enter product description"></textarea>
+						</div>
+					</div>
+					<h4>Product Offer Detail</h4>
+					<div class="row add-product-form">
+						<div class="col-md-2">
+							<label>Offer Start Date</label>
+							<input type="text" name="offerStartDate" id="sd" class="datepicker 1per-margin-left offerStartDate" placeholder="Select Date">
+						</div>
+						<div class="col-md-2 1per-margin-left">
+							<label>Offer End Date</label>
+							<input type="text" name="offerEndDate" id="ed" class="datepicker 1per-margin-left offerEndDate" placeholder="Select Date">
+						</div>
+						<div class="col-md-2 1per-margin-left">
+							<label>Discount  %</label>
+							<input type="number" name="discountPer" id="discountPer" class="1per-margin-left discountPer" placeholder="Discount %">
+						</div>
+						<div class="col-md-2 1per-margin-left">
+							<label>Offer Title</label>
+							<input type="text" name="offerTitle" id="offerTitle" class="1per-margin-left offerTitle" placeholder="Offer title">
+						</div>
+					</div>
+					<h4>Reward Point Info</h4>
+					<div class="row add-product-form">
+						<div class="col-md-2">
+							<input type="checkbox" name="enableReward" id="enableReward" class="1per-margin-left enableReward"><span>Enable Reward</span>
+						</div>
+						<div class="col-md-10">
+							<input type="checkbox" name="enableReward" id="enableReward" class="1per-margin-left enableReward"><span>Apply Points according to the configuration</span>
+						</div>
+						<div class="col-md-6">
+							<input type="number" name="enableReward" id="enableReward" class="1per-margin-left enableReward" placeholder="INR">
+							<span><label class="col-md-3">Rupees = </label></span>
+						</div>
+						<div class="col-md-6">
+							<input type="number" name="enableReward" id="enableReward" class="1per-margin-left enableReward" placeholder="POINTS">
+							<span><label>Points</label></span>
+						</div>
+						<div class="col-md-6">
+							<input type="number" name="enableReward" id="enableReward" class="1per-margin-left enableReward" placeholder="POINTS">
+							<span><label>Points  = </label></span>
+						</div>
+						<div class="col-md-6">
+							<input type="number" name="enableReward" id="enableReward" class="1per-margin-left enableReward" placeholder="RUPEE">
+							<span><label>Redemption Value</label></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="btn-primary pull-left">SAVE</button>
+		</div>
+		<div class="col-md-2">
+			
+		</div>
+	
+	</div>
+</form>
+  <!--  date picker js and css -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	  <script>
+	  $( function() {
+	    $( ".datepicker" ).datepicker({
+	    	 dateFormat: "yy-mm-dd",
+	         changeMonth: true
+	    });
+	  } );
+	  </script>
+	<!-- date picker end -->

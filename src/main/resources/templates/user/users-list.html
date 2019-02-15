@@ -1,0 +1,67 @@
+<script	src="static/js/dataTable/cdn/jquery.dataTables.min.js" th:src="@{js/dataTable/cdn/jquery.dataTables.min.js}"></script>
+<link href="static/js/dataTable/cdn/jquery.dataTables.min.css" rel="stylesheet" th:href="@{js/dataTable/cdn/jquery.dataTables.min.css}" />
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-md-12">
+				<table id="example" class="display" style="width: 100%">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Email</th>
+							<th>Name</th>
+							<th>Last Name</th>
+							<th>Active</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="user : ${consumers}">
+							<td th:text="${user.consumerId}"></td>
+							<td th:text="${user.email}"></td>
+							<td th:text="${user.firstName}"></td>
+							<td th:text="${user.lastName}"></td>
+							<td th:text="active"></td>
+						</tr>
+					</tbody>
+					<tfoot>
+						<tr>
+							<th>ID</th>
+							<th>Email</th>
+							<th>Name</th>
+							<th>Last Name</th>
+							<th>Active</th>
+						</tr>
+					</tfoot>
+				</table>
+		
+			</div>
+		</div>
+
+	</div>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#example').DataTable( {
+	        initComplete: function () {
+	            this.api().columns().every( function () {
+	                var column = this;
+	                var select = $('<select><option value=""></option></select>')
+	                    .appendTo( $(column.footer()).empty() )
+	                    .on( 'change', function () {
+	                        var val = $.fn.dataTable.util.escapeRegex(
+	                            $(this).val()
+	                        );
+	 
+	                        column
+	                            .search( val ? '^'+val+'$' : '', true, false )
+	                            .draw();
+	                    } );
+	 
+	                column.data().unique().sort().each( function ( d, j ) {
+	                    select.append( '<option value="'+d+'">'+d+'</option>' )
+	                } );
+	            } );
+	        }
+	    } );
+	} );
+	</script>

@@ -1,0 +1,183 @@
+		<div class="col-md-12">
+			
+			<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8 cust-info-form">
+						<h3 class="text-primary">
+							{{messages}}
+						</h3>
+				
+					<form role="form" class="form-inline" ng-submit="submitConsumer()">
+						<div class="form-group">
+							<label for="mobile">
+								Name
+							</label>
+							<input type="text" class="form-control" ng-model="userForm.name" id="name" placeholder="First Middle Last">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">
+								Email address
+							</label>
+							<input type="email" class="form-control" ng-model="userForm.email" id="email" placeholder="customer@gmail.com">
+						</div>
+						<div class="form-group">
+							 
+							<label for="mobile">
+								Mobile No.
+							</label>
+							<input type="tel"  class="form-control" id="phone" ng-model="userForm.phone" name="phone" placeholder="123-456-7890" size="10"
+							   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+							   required>
+							   
+						</div>
+						<div class="submit">
+							<button type="submit" class="btn btn-primary">
+								Submit
+							</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<form role="form" class="form-inline">
+				<div class="form-group ">
+					 
+					<label for="exampleInputEmail1" class="">
+						Search Product&nbsp;
+					</label>
+					<input type="email" class="form-control" id="product-search" placeholder="for ex. cloth, grosaries" size="50">
+				</div>
+			</form>
+			<table class="table table-hover table-bordered">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							Product
+						</th>
+						<th>
+							Payment Taken
+						</th>
+						<th>
+							Status
+						</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Default
+						</td>
+					</tr>
+					<tr class="table-active">
+						<td>
+							1
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							01/04/2012
+						</td>
+						<td>
+							Approved
+						</td>
+					</tr>
+					<tr class="table-success">
+						<td>
+							2
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							02/04/2012
+						</td>
+						<td>
+							Declined
+						</td>
+					</tr>
+					<tr class="table-warning">
+						<td>
+							3
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							03/04/2012
+						</td>
+						<td>
+							Pending
+						</td>
+					</tr>
+					<tr class="table-danger">
+						<td>
+							4
+						</td>
+						<td>
+							TB - Monthly
+						</td>
+						<td>
+							04/04/2012
+						</td>
+						<td>
+							Call in to confirm
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-2">
+		</div>
+		<div class="col-md-8">
+			<h5 class="text-primary">
+				<a href="#" data-customer-id="">Check Previous Order</a> <small class="alert-info">( Hide this link if the patient is not select )</small>
+			</h5>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div>
+	<div class="row">
+				<div class="col-md-2">
+				</div>
+				<div class="col-md-8">
+					<div class="jumbotron">
+						<h2>
+							Hello, world!
+						</h2>
+						<p>
+							This is a template for a simple marketing or informational website. It includes a large callout called the hero unit and three supporting pieces of content. Use it as a starting point to create something more unique.
+						</p>
+						<p>
+							<a class="btn btn-primary btn-large" href="#">Learn more</a>
+						</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+				</div>
+			</div>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Signup</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="static/css/bootstrap.min.css" rel="stylesheet"	media="screen" th:href="@{css/bootstrap.min.css}" />
+<link href="static/css/core.css" rel="stylesheet"	media="screen" th:href="@{css/core.css}" />
+<script src="static/js/jquery.min.js"	th:src="@{js/jquery.min.js}"></script>
+<script src="static/js/bootstrap.min.js" th:src="@{js/bootstrap.min.js}"></script>
+<script th:src="@{angularJS/angular.min.js}"></script>
+<script th:src="@{angularJS/user-registration.js}"></script>
+ <style type="text/css">
+.loader {
+	position: fixed;
+	width: 200px;
+	height: 50px;
+	top: 0%;
+	position: static;
+}
+
+input {
+	border-bottom: 100px;
+	padding: 5px;
+}
+
+.form-div {
+	margin-top: 50px;
+}
+span.a{
+	display:inline-block;
+}
+body {
+	background-color: white;
+}
+</style>
+</head>
+<body ng-app="UserRegistration" ng-controller="UserController as t">
+ <div th:replace="fragments/beforeSignedInHeader :: beforeSignedInHeader">&nbsp;</div>
+	<form name="userForm" ng-submit="submitConsumer()">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-6"> 
+  				<span class="a"><h1>{{title}}</h1></span>
+  				<span class="a si hidden"><img  alt="server-problem-found.gif" width="50px" height="50px"
+		  		th:src="@{images/success-icon.png}"></span>
+<!--     <p>Please fill in this form to create an account.</p> -->
+<!--     <hr> -->
+    		<div class="row form-div">
+				<label class="col-md-12" for="email"><b>Name</b></label> <input
+					class="col-md-8" type="text" ng-model="userForm.name" placeholder="Enter Name"
+					required>
+			</div>
+			<div class="row form-div">
+				<label class="col-md-12" for="email"><b>Email</b></label> <input
+					class="col-md-8" type="text" ng-model="userForm.email" placeholder="Enter Email"
+					required/>
+			</div>
+			<div>
+				<span class="emailExist">Your entered email is already exist, please enter another.</span>
+			</div>
+			<div class="row form-div">
+				<label class="col-md-12" for="psw"><b>Password</b></label> <input
+					class="col-md-8" ng-model="userForm.usrps" type="password" placeholder="Enter Password"
+					name="psw" required>
+			</div>
+			<hr>
+			    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+			    <button type="submit" class="registerbtn">Register</button>
+			    <img id="spinner" ng-src="images/spinner2.gif" width="80px" height="80px" style="display:none;">
+			    <div class="container signin">
+			    <p>Already have an account? <a href="#">Sign in</a>.</p>
+			  </div>
+  		</div>
+  		<div class="col-md-6"> 
+  			<div class="img">
+  				<img th:src="@{images/network.jpg}" />
+  			</div>
+  			<div class="loader">
+					<span><img class="hidden" id="loader" alt="no.gif" src="/static/images/1_inYwyq37FdvRPLRphTqwBA.gif"  th:src="@{images/1_inYwyq37FdvRPLRphTqwBA.gif}"></span>
+			</div>
+		  <div class="loader hidden" id="success-icon">
+		  		<div class="div-succes"><h2 id="success"><p>{{successMassage}}</p></h2></div>
+		  		<div class="div-succes"></div>
+		  </div>
+  		</div>
+  	</div>
+    
+  </div>
+</form>
+</body>
+</html>

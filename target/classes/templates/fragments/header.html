@@ -1,0 +1,51 @@
+			<ul class="nav nav-pills header" th:fragment="header">
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/home}">Home</a>
+					</li>
+					<li class="nav-item dropdown" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+						 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink_user" data-toggle="dropdown">User</a>
+						<div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink_user">
+							 <a class="dropdown-item" href="#/users">View</a>
+							 <a class="dropdown-item" href="#/user.subscription">User Subscription</a>
+							 <a class="dropdown-item" href="#/consumerSignUpPage.do">Registration</a>
+							<div class="dropdown-divider">
+							</div> 
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+						 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink1" data-toggle="dropdown">Reward Points</a>
+						<div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink1">
+							 <a class="dropdown-item" href="#/add.reward">Add Point</a>
+							 <a class="dropdown-item" href="#/view.earning.rule">View Earning Rules</a>
+							 <a class="dropdown-item" href="#/add.social.media.rule">Add Earning Rule</a>
+							 <a class="dropdown-item" href="#/user.points.details">User Points Details</a>
+							<div class="dropdown-divider">
+							</div> 
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown" th:if="${#authorization.expression('hasRole(''ROLE_ADMIN'')')}">
+						 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink_product" data-toggle="dropdown">Products</a>
+						<div class="dropdown-menu dropdown-menu-left" aria-labelledby="navbarDropdownMenuLink_product">
+							 <a class="dropdown-item" href="#/product.add">Add</a>
+							 <a class="dropdown-item" href="#/product.view">View</a>
+							<div class="dropdown-divider">
+							</div> 
+							<a class="dropdown-item" href="#">Separated link</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown ml-md-auto">
+						 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown">Dropdown link</a>
+						<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+							 <a class="dropdown-item" th:href="@{/profile.client}">Profile</a>
+							 <a class="dropdown-item" href="#">Something else here</a>
+							<div class="dropdown-divider">
+							</div> 
+							<a class="dropdown-item" th:href="@{#}" onclick="$('#form').submit();">Logout</a>
+						</div>
+						<form style="visibility: hidden" id="form" method="post"
+							action="#" th:action="@{/logout}"></form>
+					</li>
+				</ul>
+		

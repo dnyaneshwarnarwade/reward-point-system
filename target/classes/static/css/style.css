@@ -1,0 +1,33 @@
+
+.cust-info-form, .add-product-form{
+	background-color:#eceeef;
+	margin-bottom: 1%;
+	padding: 4rem 2rem;
+    padding-top: 4rem;
+    padding-right: 2rem;
+    padding-bottom: 4rem;
+    padding-left: 2rem;
+	opacity:10%;
+}
+
+.submit{
+	margin-left:2px;
+}
+
+.header{
+	background-color:#eceeef;	
+	padding:1px;
+	margin-bottom:2%;
+	padding-bottom:15px;
+}
+
+.1per-margin{
+	margin-bottom:2%;
+	
+}
+.1per-margin-left{
+	margin-left:2%;
+}
+.paginate-nav{
+	
+}

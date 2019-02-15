@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sign In</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="css/bootstrap.min.css" th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+    <link href="css/style.css" th:href="@{css/style.css}" rel="stylesheet">
+
+  </head>
+  <body>
+	<div th:replace="fragments/beforeSignedInHeader :: beforeSignedInHeader">&nbsp;</div>
+    <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-4">
+		</div>
+		<div class="col-md-4 ">
+			<div class="text-center">
+				<img alt="Logo" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" class="rounded-circle">
+			</div>
+			<form role="form" action="#" method="post" th:action="@{/signin}">
+				<div class="form-group">
+					 
+					<label for="exampleInputEmail1">
+						Email address
+					</label>
+					<input class="form-control" type="text"  id="inputEmail" placeholder="Email" name="email" />
+				</div>
+				<div class="form-group">
+					 
+					<label for="exampleInputPassword1">
+						Password
+					</label>
+					<input type="password" class="form-control" id="inputPassword" placeholder="Password" name="password" />
+				</div>
+				
+				<div class="checkbox">
+					 
+					<label>
+						<input type="checkbox"> Remeber Me
+					</label>
+				</div> 
+				<button type="submit" class="btn btn-primary">
+					Submit
+				</button>
+			</form>
+		</div>
+		<div class="col-md-4">
+		</div>
+	</div>
+</div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

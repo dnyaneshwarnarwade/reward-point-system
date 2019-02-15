@@ -1,0 +1,26 @@
+	<nav class="navbar"
+		th:fragment="RewardPointHeader">
+		<div class="container text-left">
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li th:classappend="${module == 'reward' ? 'active' : ''}"><a
+						th:href="@{/viewEarningRule}">View Earning Rule</a>
+					</li>
+					<li th:classappend="${module == 'reward' ? 'active' : ''}"><a
+						th:href="@{/addRewardPoint}">Add Point</a>
+					</li>
+					<li th:classappend="${module == 'reward' ? 'active' : ''}"><a
+						th:href="@{/userRewardPointDetails}">Reward Point Details</a>
+					</li>
+					<li th:classappend="${module == 'reward' ? 'active' : ''}"><a
+						th:href="@{/addEarningRule}">Add Earning Rule</a>
+					</li>
+					<li th:classappend="${module == 'reward' ? 'active' : ''}"><a
+						th:href="@{/addManualRewardTransaction}">Add Manual Reward To User</a>
+					</li>
+				</ul>
+				
+			</div>
+			<!--/.nav-collapse -->
+		</div>
+	</nav>

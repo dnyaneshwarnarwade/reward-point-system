@@ -1,0 +1,18 @@
+	<nav class="navbar"
+		th:fragment="productHeader">
+		<div class="container text-left">
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li th:classappend="${module == 'addProduct' ? 'active' : ''}"><a
+						 th:href="@{addProduct}">Add product</a>
+					</li>
+					<li th:classappend="${module == 'addCategory' ? 'active' : ''}"><a
+						 th:href="@{addCategory}">Add Category</a>
+					</li>
+					<li th:classappend="${module == 'addCategory' ? 'active' : ''}"><a
+						 th:href="@{viewProduct}">View Products</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
